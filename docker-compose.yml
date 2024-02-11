@@ -1,0 +1,47 @@
+version: "3.8"
+services:
+
+  ollama:
+    image: ollama/ollama:0.1.24
+    expose:
+     - 11434/tcp
+    healthcheck:
+      test: ollama --version || exit 1
+    command: serve
+    restart: on-failure
+    volumes:
+      - ollama:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['all']
+              capabilities: [gpu]
+
+  llava:
+    build:
+      context: ./llava
+    environment:
+     - OLLAMA_BASE_URL=http://ollama:11434
+    restart: on-failure
+    depends_on:
+     ollama:
+       condition: service_healthy
+     curl:
+       condition: service_completed_successfully
+
+  curl:
+    image: curlimages/curl:latest
+    environment:
+      - MODEL=llava:34b-v1.6
+    command: >
+      /bin/sh -c "curl -X POST http://ollama:11434/api/pull 
+      -d \"{\\\"name\\\": \\\"$$MODEL\\\"}\""
+    restart: on-failure
+    depends_on:
+      - ollama
+
+
+volumes:
+  ollama:
