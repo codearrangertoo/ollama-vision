@@ -19,10 +19,9 @@ docker compose up
 * You will need to wait some time while ollama downloads the llava model
 
 #### Example output
-![image sample](http://ap.rdcpix.com/f26d996a7895ac8ef8b44bc5628cce3bl-m3560213744od-w480_h360_x2.webp?w=1080&q=75)
+![image sample](http://ap.rdcpix.com/f26d996a7895ac8ef8b44bc5628cce3bl-m1461818644od-w480_h360_x2.webp?w=1080&q=75)
 
-The image shows a heating and cooling system installed in what appears to be an attic or basement space. There are two main components visible:
-1. An air conditioning unit (likely a split-style unit) positioned on the left side of the frame, with its condensing coils and compressor unit visible, as well as the electrical connections for power.
-2. A gas boiler installed in the center and to the right, with pipes leading away from it. The boiler has a yellow sticker indicating some type of warning or instruction, but the text is not legible in this image. It also displays the "Bradford White" branding on its side.
-3. The system appears to be well-organized and possibly professionally installed, as indicated by the clear piping and safety measures such as the yellow sticker. The environment looks unfinished, suggesting that this could be a workspace or an area where maintenance takes place.
+The image shows a single-family residential house. It has a two-car garage to the right, which appears to be attached to the main structure of the home. The exterior walls are finished with siding in a light color, possibly cream or tan, while the roof is pitched and made of shingles, suggesting that this could be in a region with colder climates.
+The house features several windows visible from the front view. Each window has white trim, which complements the overall color scheme of the house. There are no visible signs or decorations indicating any specific event or time period. The front yard is mostly bare with some fallen leaves scattered on the grass, indicating it might be autumn.
+The driveway leading to the garage is clear, and there's a paved sidewalk running parallel to the street in front of the property. There are no visible trees or landscaping features other than the bare branches of a nearby tree. The sky is overcast, suggesting it might be a cloudy day.
 
