@@ -22,8 +22,8 @@ services:
   llava:
     build:
       context: ./llava
-    environment:
-     - OLLAMA_BASE_URL=http://ollama:11434
+    env_file:
+      - .env
     restart: on-failure
     depends_on:
      ollama:
@@ -33,15 +33,14 @@ services:
 
   curl:
     image: curlimages/curl:latest
-    environment:
-      - MODEL=llava:34b-v1.6
+    env_file:
+      - .env
     command: >
-      /bin/sh -c "curl -X POST http://ollama:11434/api/pull 
-      -d \"{\\\"name\\\": \\\"$$MODEL\\\"}\""
+      /bin/sh -c "curl -X POST $$OLLAMA_BASE_URL/api/pull
+      -d \"{\\\"name\\\": \\\"$$VISION_MODEL\\\"}\""
     restart: on-failure
     depends_on:
       - ollama
-
 
 volumes:
   ollama:
